@@ -1,0 +1,93 @@
+body {
+    height: 100%;
+}
+
+* {
+    list-style: none;
+}
+
+.list {
+    border: 1px solid red;
+    margin-top: 100px;
+    height: 1000px;
+    width: 50%;
+}
+
+.list .container {
+    border: 1px solid black;
+    height: 120px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.notice-box {
+    border: 1px solid red;
+    width: 50%;
+}
+
+.content {
+    display: flex;
+    text-align: center;
+    
+}
+.notice-test {
+    display: flex;
+    text-align: center;
+
+}
+
+.list-num {
+    width: 10%;
+}
+.text {
+    width: 70%;
+}
+.list-name {
+    width: 20%;
+}
+
+.notice-paging {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+
+/* 페이지네이션 버튼  */
+.buttons {
+    position: relative;
+    padding: 1rem 0;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.button.active,
+.button:hover {
+    color: #1f975d;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.prev {
+    position: absolute;
+    left: -2.5rem;
+}
+
+.next {
+    position: absolute;
+    right: -2.5rem;
+}
