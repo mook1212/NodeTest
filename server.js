@@ -116,6 +116,7 @@ passport.use(new LocalStrategy({
 
             crypto.pbkdf2(inputPassword, salt, hash.iterations, hash.keylen, hash.digest, function (err, key) {
                 if (key.toString('hex') === hash.hash) {
+                    console.log('로그인성공');
                     return done(null, result);
                 } else {
                     return done(null, false, { message: '비번틀림' });

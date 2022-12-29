@@ -24,14 +24,33 @@
     <br>
     <br>
 
+
+
     <form action="/login" method="POST">
         <input id="login-id" type="text" name="id">
         <input id="login-pw" type="text" name="pw">
         <button type="submit">로그인</button>
-        <!-- <button id="login-btn">로그인</button> -->
     </form>
 
+    <!-- <input id="login-id" type="text">
+    <input id="login-pw" type="text">
+    <button id="login">로그인</button> -->
+
     <script>
+
+        // document.getElementById('login').addEventListener('click', () => {
+        //     let id = document.getElementById('login-id').value
+        //     let pw = document.getElementById('login-pw').value
+
+        //     $.post('/login', {
+        //         id: id,
+        //         pw: pw
+        //     })
+        //     .done((res) => {
+        //         console.log(res);
+        //     })
+        // })
+
         document.getElementById('btn').addEventListener('click', () => {
 
             let id = document.getElementById('id').value
@@ -44,7 +63,6 @@
                 alert('성공')
             })
         })
-
     </script>
 
 </body>
