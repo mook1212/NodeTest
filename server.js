@@ -140,7 +140,6 @@ passport.deserializeUser(function (id, done) {
 // 마이페이지
 app.get('/mypage', Login, (req, res) => {
     res.sendFile(__dirname + '/view/mypage.html')
-
 })
 // 로그인 했는지 확인 함수
 function Login(req, res, next) {
@@ -150,6 +149,8 @@ function Login(req, res, next) {
         res.send('로그인 안함')
     }
 }
+
+
 
 
 // 게시글 작성
