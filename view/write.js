@@ -3,12 +3,13 @@ let date = new Date()
 
 document.querySelector('.ok').addEventListener('click',()=>{
 
+    let name = sessionStorage.getItem('name')
     let title = document.getElementById('title').value
     let content = document.getElementById('content').value
 
-
     $.post('/writing',{
         date : date ,
+        name : name,
         title : title ,
         content : content,
     }).done((res)=>{

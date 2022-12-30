@@ -6,7 +6,8 @@ document.querySelector('.login').addEventListener('click',()=>{
 
 document.querySelector('.write').addEventListener('click', () => {
 
-    let id = localStorage.getItem('id')
+    let id = sessionStorage.getItem('userId')
+    console.log(id);
     if (id) {
         location.href = `/write?id=${id}`
     } else {
@@ -30,7 +31,7 @@ $.ajax({
     const maxButton = 5;
     const maxPage = res.length / 5 + 1;
     let page = 1;
-
+    console.log(res);
 
     // 게시판 글 조회
     const makeContent = (id) => {

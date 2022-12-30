@@ -20,7 +20,7 @@ app.use(passport.session());
 
 
 
-const { ObjectId } = require('mongodb')
+const { ObjectId } = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 
 var db;
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 })
 
 // write 페이지 이동
-app.get('/write', (req, res) => {
+app.get('/write', Login ,(req, res) => {
     res.sendFile(__dirname + '/view/write.html')
 })
 
@@ -89,8 +89,17 @@ app.get('/login', (rqe, res) => {
 app.post('/login', passport.authenticate('local', {
     failureRedirect: '/fail'
 }), (request, response) => {
-    response.redirect('/')
+    const userId = request.user._id;
+    const Id = request.user.id;
+    response.send(`
+        <script>
+            sessionStorage.setItem('userId', '${userId}');
+            sessionStorage.setItem('name', '${Id}');
+            window.location.href = '/';
+        </script>
+    `);
 })
+
 
 // 로그인 실패
 app.get('/fail', (req, res) => {
